@@ -22,7 +22,7 @@ let day = date.getDate();
 let hour = date.getHours();
 let minute = date.getMinutes();
 
-let today = `| ${year}/${month + 1}/${day} | ${hour === 0 ? 12 : hour > 12 ? hour - 12 : hour}:${minute < 10 ? '0' + minute : minute} ${hour >= 12 ? 'PM' : 'AM'}`;
+let today = ` ${year}/${month + 1}/${day} | ${hour === 0 ? 12 : hour > 12 ? hour - 12 : hour}:${minute < 10 ? '0' + minute : minute} ${hour >= 12 ? 'PM' : 'AM'}`;
 
 //? end date logic 
 
@@ -34,7 +34,7 @@ const taskTitle = document.querySelector('.prompt-task-title');
 const submitTask = document.querySelector('.prompt-task-add');
 const closeTask = document.querySelector('.prompt-task-close');
 const editTaskBtn = document.getElementById('editBtn-task');
-const submitEditTaskBtn = document.getElementById('prompt-task-edit');
+const submitEditTaskBtn = document.getElementById('editBtn-task');
 
 const tasksContainer = document.querySelector('.task');
 
@@ -63,7 +63,11 @@ function displayTasks() {
       `
   <!-- task body -->
     <div class="task-body ${task.isDon ? 'done' : ''}">
-        <h2 class="title-task">${task.title}<span class="date-task" id="date-task">${task.time}</span></h2>
+      <div class="task-header-text">
+        <h2 class="title-task">${task.title}</h2>
+        <hr>
+        <p><span class="date-task" id="date-task">${task.time}</span></p>
+    </div>
 
         <div class="task-buttons-wrapper">
           <button onclick="deleteTask(${task.id})" class="delete-task circle" title="delete task"><i class="fa-solid fa-trash"></i></button>
@@ -206,10 +210,11 @@ const reset = document.getElementById('reset');
 const timer = document.getElementById('timer');
 const plusMinute = document.getElementById('plus-minute');
 const minusMinute = document.getElementById('minus-minute');
-let sound = new Audio('./voices/alarmUp.wav');
+let sound = new Audio('./voices/levlUp.wav');
 
 let timeLeft = 1500;
 let interval;
+let isRunning = false;
 
 const updateTimer = () => {
   const minutes = Math.floor(timeLeft / 60);
@@ -225,7 +230,6 @@ const startTimer = () => {
 
     if (timeLeft === 0) {
       clearInterval(interval);
-      // alert('Time is up!');
       sound.play();
       timeLeft = 1500;
       updateTimer();
@@ -236,17 +240,43 @@ const startTimer = () => {
 
 const stopTimer = () => {
   clearInterval(interval);
+
 }
 
 const resetTimer = () => {
   clearInterval(interval);
   timeLeft = 1500;
   updateTimer();
+
 }
 
-start.addEventListener('click', startTimer);
-stop.addEventListener('click', stopTimer);
-reset.addEventListener('click', resetTimer);
+start.addEventListener('click', function() {
+  if (!isRunning) {
+    isRunning = true;
+    this.disabled = true;  
+    stop.disabled = false;
+    reset.disabled = false;
+    startTimer();
+  }
+});
+
+stop.addEventListener('click', function() { 
+  if (isRunning) {
+    isRunning = false;
+    stopTimer();
+    start.disabled = false;  
+    this.disabled = true;  
+  }
+});
+
+reset.addEventListener('click', function() {
+  this.disabled = true;
+  resetTimer();
+  isRunning = false;  
+  stop.disabled = true;
+  start.disabled = false;
+});
+
 
 plusMinute.addEventListener('click', () => {
   timeLeft += 300;
@@ -539,7 +569,7 @@ submitPromptBtn.addEventListener('click', () => {
   promptNote.classList.toggle('hidden');
 });
 
-function editNote(id) { 
+function editNote(id) {
   const noteToEdit = nots.find(note => note.id === id);
 
   submitPromptBtn.classList.add('hidden');
