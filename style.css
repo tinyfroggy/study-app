@@ -20,10 +20,10 @@ body {
 }
 
 .circle{
-  width: 40px;
+  width: 2.5rem;
   border-radius: 50%;
   border: none;
-  font-size: 1.5rem;
+  font-size: 24px;
   cursor: pointer;
   background-color: white;
 }
@@ -34,32 +34,25 @@ body {
 
 .container {
   display: grid;
-  gap: 10px;
+  gap: .625rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   width: 90%;
-  max-width: 1200px;
+  max-width: 75rem;
   height: 90%;
   color: white;
 }
 
 .box {
-  font-size: 1.5rem;
-  border-radius: 10px;
+  font-size: 24px;
+  border-radius: .625rem;
   color: white;
 }
 
 
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-  }
-}
-
 /* #region box1 */
 .box1 {
-  border: solid 1px white;
+  border: solid .0625rem white;
 }
 
 .task-header {
@@ -67,22 +60,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 10px 10px 0 0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-bottom: solid 1px white;
+  border-radius: .625rem .625rem 0 0;
+  padding: .625rem;
+  margin-bottom: .625rem;
+  border-bottom: solid .0625rem white;
 }
 
 .header-title {
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   color: white;
   background-color: rgba(0, 0, 0, 0.551);
 }
 
 .add-task {
-  width: 3rem;
-  font-size: 2.5rem;
+  width: 48px;
+  font-size: 40px;
   cursor: pointer;
   border: none;
   background: none;
@@ -91,15 +84,15 @@ body {
 
 .tasks{
   width: 100%;
-  max-height: 300px;
+  max-height: 18.75rem;
   overflow-y: scroll;
 }
 
 /* task scrollbar */
 
 .tasks::-webkit-scrollbar {
-  width: 5px; 
-  height: 4px; 
+  width: .3125rem; 
+  height: .25rem; 
 }
 
 .tasks::-webkit-scrollbar-track {
@@ -109,7 +102,7 @@ body {
 .tasks::-webkit-scrollbar-thumb {
   background-color: white; 
   border: none;
-  border-radius: 10px; 
+  border-radius: .625rem; 
 }
 
 .tasks::-webkit-scrollbar-thumb:hover {
@@ -119,16 +112,16 @@ body {
 /* end task scrollbar */
 
 .task-body{
-  border: solid 1px white;
+  border: solid .0625rem white;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: .625rem;
+  margin-bottom: .625rem;
   transition: background-color 0.3s;
-  border-radius: 10px;
-  margin: 10px;
+  border-radius: .625rem;
+  margin: .625rem;
 }
 
 .task-body:hover {
@@ -145,6 +138,13 @@ body {
 .task-header-text{
   width: 100%;
   padding: 5px;
+  height: 50px;
+}
+
+.task-header-text p{
+  margin: 0;
+  height: 25px;
+  display: flex;
 }
 
 .task-header-text hr{
@@ -153,52 +153,51 @@ body {
 }
 
 .title-task{
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 #date-task{
-  font-size: 15px;
+  font-size: .9375rem;
   margin: 0;
-  margin-bottom: 60%;/
 }
 
 .task-buttons-wrapper{
   display: flex;
-  /* gap: 10px; */
+  /* gap: .625rem; */
 }
 
 .task-buttons-wrapper button{
-  font-size: 1.5rem;
-  margin-left: 10px;
+  font-size: 24px;
+  margin-left: .625rem;
 }
 
 .date-task{
-  font-size: 13px;
-  margin-left: 10px;
+  font-size: .8125rem;
+  margin-left: .625rem;
 }
 
 
 .delete-task , .done-task , .edit-task {
   background-color: #314029;
   color: white;
-  border: solid 1px white;
+  border: solid .0625rem white;
 }
 
 /* #region  prompt task */
 
 .prompt-task{
   background-color: #314029;
-  border: solid 1px white;
-  width: 400px;
-  height: 300px;
+  border: solid .0625rem white;
+  width: 25rem;
+  height: 18.75rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding: 10px;
-  border-radius: 10px;
+  padding: .625rem;
+  border-radius: .625rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -207,31 +206,31 @@ body {
 }
 
 .prompt-task-button{
-  margin-top: 10px;
+  margin-top: .625rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 3.125rem;
 }
 
 .prompt-task-button button{
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   background-color: #314029;
   color: white;
-  border: solid 1px white;
+  border: solid .0625rem white;
 }
 
 .prompt-task-title{
-  margin-top: 5rem;
+  margin-top: 80px;
   width: 90%;
-  padding: 5px;
-  font-size: 1.5rem;
+  padding: .3125rem;
+  font-size: 24px;
   font-weight: bold;
-  border: 1px solid #070606;
-  border-radius: 10px;
-  padding: 10px;
+  border: .0625rem solid #070606;
+  border-radius: .625rem;
+  padding: .625rem;
   outline: none;
   border: none;
 }
@@ -239,7 +238,7 @@ body {
 /* #endregion  end prompt task */
 
 .done{
-  text-decoration: line-through 2px;
+  text-decoration: line-through .125rem;
   background-color: #4a613e;
   border: none;
 }
@@ -253,7 +252,7 @@ body {
 /* #region box2 */
 
 .box2 {
-  border: solid 1px white;
+  border: solid .0625rem white;
 }
 
 .timer-container{
@@ -269,22 +268,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 10px 10px 0 0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-bottom: solid 1px white;
+  border-radius: .625rem .625rem 0 0;
+  padding: .625rem;
+  margin-bottom: .625rem;
+  border-bottom: solid .0625rem white;
 }
 
 .title-timer{
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   color: white;
   background-color: rgba(0, 0, 0, 0.551);
 }
 
 .timer-btn{
-  width: 3rem;
-  font-size: 2.5rem;
+  width: 48px;
+  font-size: 40px;
   cursor: pointer;
   border: none;
   background: none;
@@ -292,23 +291,23 @@ body {
 }
 
 .timer-wrapper{
-  font-size: 2rem;
+  font-size: 32px;
 }
 
 .timer{
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: bold;
-  margin: 5px;
+  margin: .3125rem;
 }
 
 .timer-wrapper{
   display: flex;
-  gap: 5px;
-  margin-bottom: 10px;
+  gap: .3125rem;
+  margin-bottom: .625rem;
 }
 
 .timer-wrapper button{
-  font-size: 2rem;
+  font-size: 32px;
   cursor: pointer;
   border: none;
   background: none;
@@ -320,18 +319,18 @@ body {
 }
 
 .button-wrapper button{
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
-  letter-spacing: 1px;
-  padding: 5px;
-  border-radius: 10px;
+  letter-spacing: .0625rem;
+  padding: .3125rem;
+  border-radius: .625rem;
   border: none;
   color: white;
   cursor: pointer;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  margin-left: .625rem;
+  margin-bottom: .625rem;
   background-color: #314029;
-  border: solid 1px white;
+  border: solid .0625rem white;
 }
 
 .button-wrapper button:hover{
@@ -359,13 +358,13 @@ body {
 /* #region box3 */
 
 .box3 {
-  border: solid 1px white;
-  margin-bottom: 20px;
+  border: solid .0625rem white;
+  margin-bottom: 1.25rem;
 }
 
 .flash-cards-container{
   width: 100%;
-  max-height: 300px;
+  max-height: 18.75rem;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -373,8 +372,8 @@ body {
 /* flash card scrollbar */
 
 .flash-cards-container::-webkit-scrollbar {
-  width: 5px; 
-  height: 4px; 
+  width: .3125rem; 
+  height: .25rem; 
 }
 
 .flash-cards-container::-webkit-scrollbar-track {
@@ -384,7 +383,7 @@ body {
 .flash-cards-container::-webkit-scrollbar-thumb {
   background-color: white; 
   border: none;
-  border-radius: 10px; 
+  border-radius: .625rem; 
 }
 
 
@@ -399,21 +398,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: .625rem;
   color: white;
-  border-bottom: solid 1px white;
+  border-bottom: solid .0625rem white;
 }
 
 .flash-card-header-title{
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .flash-card-add{
-  width: 3rem;
+  width: 48px;
   border-radius: 50%;
-  font-size: 2.5rem;
+  font-size: 40px;
   background: none;
   color: white;
   border: none;
@@ -421,10 +420,10 @@ body {
 
 .flash-card-body{
   background-color: rgba(0, 0, 0, 0.5);
-  border: solid 1px white;
+  border: solid .0625rem white;
   text-align: center;
-  margin: 5px;
-  border-radius: 10px;
+  margin: .3125rem;
+  border-radius: .625rem;
 }
 
 .flash-card-title{
@@ -433,22 +432,22 @@ body {
   align-items: center;
   font-weight: bold;
   color: white;
-  margin: 5px;
+  margin: .3125rem;
 }
 
 .flash-card-title h1{
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 1.25rem;
+  margin-right: .625rem;
   font-weight: bold;
 }
 
 .flash-card-title button{
-  width: 2rem;
-  height: 2rem;
-  margin: 5px;
+  width: 32px;
+  height: 32px;
+  margin: .3125rem;
   background-color: #4a613e;
   color: white;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .flash-card-title button:hover{
@@ -457,11 +456,11 @@ body {
 
 .flash-card-hr{
   background-color: white;
-  margin: 10px;
+  margin: .625rem;
 }
 
 .flash-card-answer{
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   color: white;
 }
@@ -470,16 +469,16 @@ body {
 
 .prompt-flash-card-button{
   width: 100%;
-  height: 50px;
+  height: 3.125rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 .prompt-flash-card-button button{
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   background-color: #4a613e;
   color: white;
 }
@@ -489,17 +488,17 @@ body {
 }
 
 .prompt-flash-card{
-  width: 400px;
-  height: 300px;
+  width: 25rem;
+  height: 18.75rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   background-color: #314029;
   text-align: center;
-  padding: 10px;  
-  border: solid 1px white;
-  border-radius: 10px;
+  padding: .625rem;  
+  border: solid .0625rem white;
+  border-radius: .625rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -508,20 +507,20 @@ body {
 
 .prompt-flash-card-title, .prompt-flash-card-answer{
   width: 100%;
-  height: 50px;
+  height: 3.125rem;
   font-weight: bold;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 24px;
   color: #070606;
-  border-radius: 10px;
-  margin: 5px;
+  border-radius: .625rem;
+  margin: .3125rem;
   outline: none;
   border: none;
 }
 
 .prompt-flash-card-hr{
   background-color: white;
-  margin: 10px;
+  margin: .625rem;
 }
 
 /* #endregion  end prompt flash card */
@@ -531,9 +530,9 @@ body {
 /* #region  box4 */
 
 .box4 {
-  border: solid 1px white;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  border: solid .0625rem white;
+  border-radius: .625rem;
+  margin-bottom: 1.25rem;
 }
 
 .header-nots {
@@ -541,21 +540,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-radius: 10px 10px 0 0;
+  padding: .625rem;
+  border-radius: .625rem .625rem 0 0;
   color: white;
-  border-bottom: solid 1px white;
+  border-bottom: solid .0625rem white;
 }
 
 .title-nots {
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.551);
 }
 
 .create-note {
-  width: 3rem;
-  font-size: 2.5rem;
+  width: 48px;
+  font-size: 40px;
   cursor: pointer;
   border: none;
   background: none;
@@ -564,21 +563,21 @@ body {
 
 .container-nots {
   width: 100%;
-  padding: 10px;
-  max-height: 300px;
+  padding: .625rem;
+  max-height: 18.75rem;
   overflow: hidden;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 .625rem .625rem;
 }
 
 /* nots scrollbar */
 
 .container-nots::-webkit-scrollbar {
-  width: 5px; 
-  height: 4px; 
+  width: .3125rem; 
+  height: .25rem; 
 }
 
 .container-nots::-webkit-scrollbar-track {
@@ -588,7 +587,7 @@ body {
 .container-nots::-webkit-scrollbar-thumb {
   background-color: white; 
   border: none;
-  border-radius: 10px; 
+  border-radius: .625rem; 
 }
 
 
@@ -599,61 +598,61 @@ body {
 /* end nots scrollbar */
 
 .note {
-  width: 250px;
-  height: 250px;
+  width: 15.625rem;
+  height: 15.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: .625rem;
 }
 
 .note-buttons {
   background-color: #182c52;
-  width: 250px;
-  height: 50px;
+  width: 15.625rem;
+  height: 3.125rem;
   display: flex;
   justify-content: space-between;
-  border-radius: 10px 10px 0px 0px;
-  border-bottom: black 1px solid;
+  border-radius: .625rem .625rem 0rem 0rem;
+  border-bottom: black .0625rem solid;
 }
 
 .note-buttons button {
   background-color: #4a613e;
   color: white;
-  margin: 10px;
-  width: 40px;
-  height: 25px;
-  font-size: 1rem;
+  margin: .625rem;
+  width: 2.5rem;
+  height: 1.5625rem;
+  font-size: 16px;
   cursor: pointer;
   border: none;
-  border-radius: 5px;
+  border-radius: .3125rem;
 }
 
 .note-board {
   background-color: white;
   width: 100%;
   height: 100%;
-  font-size: 1.5rem;
-  padding: 5px;
+  font-size: 24px;
+  padding: .3125rem;
   resize: none;
   user-select: none;
   outline: none;
   border: none;
-  scroll-padding-block: 10px;
+  scroll-padding-block: .625rem;
   overflow-y: scroll ;
   box-sizing: border-box;
 }
 
 
 .note-board::-webkit-scrollbar {
-  width: 5px; 
-  height: 5px; 
+  width: .3125rem; 
+  height: .3125rem; 
 }
 
 .note-board::-webkit-scrollbar-thumb {
   background-color: black;
   border: none;
-  border-radius: 10px; 
+  border-radius: .625rem; 
   cursor: grabbing;
 }
 
@@ -663,14 +662,14 @@ body {
 
 .prompt-note {
   background-color: #003366;
-  width: 400px;
-  height: 300px;
+  width: 25rem;
+  height: 18.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 10px;
-  border-radius: 20px;
+  padding: .625rem;
+  border-radius: 1.25rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -680,18 +679,18 @@ body {
 .prompt-buttons {
   background-color: #294c94;
   width: 100%;
-  height: 70px;
+  height: 4.375rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  margin-bottom: .625rem;
+  border-radius: .625rem;
 }
 
 .prompt-buttons button {
-  margin: 10px;
-  width: 50px;
-  height: 50px;
+  margin: .625rem;
+  width: 3.125rem;
+  height: 3.125rem;
   background-color: #2079b4;
   color: white;
 }
@@ -699,23 +698,23 @@ body {
 .text-prompt {
   width: 100%;
   height: 70%;
-  padding: 5px;
+  padding: .3125rem;
   outline: none;
   border: none;
-  border-radius: 10px;
-  font-size: 1.5rem;
+  border-radius: .625rem;
+  font-size: 24px;
   resize: none;
 }
 
 .text-prompt::-webkit-scrollbar {
-  width: 5px; 
-  height: 5px; 
+  width: .3125rem; 
+  height: .3125rem; 
 }
 
 .text-prompt::-webkit-scrollbar-thumb {
   background-color:  #10C8CD;
   border: none;
-  border-radius: 10px; 
+  border-radius: .625rem; 
   cursor: grabbing;
 }
 
@@ -728,3 +727,153 @@ body {
 }
 
 /* #endregion  end box4 */
+
+
+
+@media (max-width: 768px) {
+  body{
+    background-image: url("https://i.pinimg.com/control/564x/23/6e/5a/236e5af3426b5e01ac1e6948712721a7.jpg");
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .container{
+    padding: 10px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .add-task {
+    font-size: 20px;
+  }
+
+  .task-header-text p{
+    margin: 0;
+  }
+
+  .title-task {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  #date-task {
+    font-size: 10px;
+    margin: 0;
+  }  
+
+  .task-buttons-wrapper  button{
+    font-size: 20px;
+  }
+
+  .task-header-text p{
+    margin: 0;
+    height: 15px;
+    display: flex;
+  }
+
+  .title-timer {
+    font-size: 16px;
+  }
+
+  .timer-btn {
+    font-size: 20px;
+  }
+
+  .button-wrapper button{
+    font-size: 15px;
+  }
+
+  .flash-card-add{
+    font-size: 20px;
+  }
+
+  .flash-card-header-title{
+    font-size: 16px;
+  }
+
+  .button-flash-card button{
+    font-size: 20px;
+  }
+
+  .create-note{
+    font-size: 20px;
+  }
+
+  .title-nots{
+    font-size: 16px;
+  }
+
+  .tasks{
+    height: 200px;
+  }
+
+  .timer-container{
+    height: 200px;
+  }
+
+  .flash-cards-container{
+    height: 200px;
+  }
+
+  .container-nots{
+    height: 200px;
+  } 
+
+  .prompt-task {
+    width: 200px;
+    height: 200px;
+  }
+  .prompt-task-button{
+    margin: 0;
+  }
+
+  .prompt-task-button button{
+    font-size: 20px;
+    border: none;
+  }
+
+  .prompt-task-title{
+    margin: 20px;
+    font-size: 10px;
+  }
+
+  .prompt-flash-card{
+    width: 200px;
+    height: 200px;
+  }
+
+  .prompt-flash-card-button{
+    margin: 0;
+  }
+
+  .prompt-flash-card-button button{
+    border: none;
+    font-size: 20px;
+    background: none;
+  }
+
+  .prompt-flash-card-title, .prompt-flash-card-answer{
+    font-size: 10px;
+  }
+
+  .prompt-note{
+    width: 200px;
+    height: 200px;
+  }
+
+  .prompt-note-button{
+    margin: 0;
+  }
+
+  .prompt-note-button button{
+    border: none;
+    font-size: 20px;
+    background: none;
+  }
+
+}
