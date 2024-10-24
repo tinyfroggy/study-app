@@ -734,6 +734,7 @@ body {
   body{
     height: 120dvh;
     background-image: url("./img/phinbg.jpg");
+    background-attachment: fixed;
   }
 
   .container {
