@@ -1,0 +1,708 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 110vh;
+  background-color: #070606 !important;
+  color: white;
+  font-family: Arial, sans-serif;
+  background-image: url("./img/bgAppStudy.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.circle{
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+.hidden{
+  display: none;
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 90%;
+  max-width: 1200px;
+  height: 90%;
+  color: white;
+}
+
+.box {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+/* #region box1 */
+.box1 {
+  border: solid 1px white;
+}
+
+.task-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px white;
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.551);
+}
+
+.add-task {
+  width: 3rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+}
+
+.tasks{
+  width: 100%;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+/* task scrollbar */
+
+.tasks::-webkit-scrollbar {
+  width: 5px; 
+  height: 4px; 
+}
+
+.tasks::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0); 
+}
+
+.tasks::-webkit-scrollbar-thumb {
+  background-color: white; 
+  border: none;
+  border-radius: 10px; 
+}
+
+.tasks::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
+}
+
+/* end task scrollbar */
+
+.task-body{
+  border: solid 1px white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.task-body:hover {
+  background-color: #4a6d7b;
+  .title-task{
+    color: white;
+  }
+  .circle{
+    background-color: #181829;
+    color: white;
+  }
+}
+
+.title-task{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.task-buttons-wrapper{
+  display: flex;
+  gap: 10px;
+}
+
+.date-task{
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+
+.delete-task , .done-task , .edit-task {
+  background-color: #314029;
+  color: white;
+  border: solid 1px white;
+}
+
+/* #region  prompt task */
+
+.prompt-task{
+  background-color: #314029;
+  border: solid 1px white;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+}
+
+.prompt-task-button{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.prompt-task-button button{
+  width: 50px;
+  height: 50px;
+  background-color: #314029;
+  color: white;
+  border: solid 1px white;
+}
+
+.prompt-task-title{
+  margin-top: 5rem;
+  width: 90%;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid #070606;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  border: none;
+}
+
+/* #endregion  end prompt task */
+
+.done{
+  text-decoration: line-through 2px;
+  background-color: #4a613e;
+  border: none;
+}
+
+.done:hover{
+  background-color: #3b4e31;
+}
+
+/* #endregion  end box1 */
+
+/* #region box2 */
+
+.box2 {
+  border: solid 1px white;
+}
+
+.timer-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px white;
+}
+
+.title-timer{
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.551);
+}
+
+.timer-btn{
+  width: 3rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+}
+
+.timer-wrapper{
+  font-size: 2rem;
+}
+
+.timer{
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.timer-wrapper{
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.timer-wrapper button{
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+}
+
+.button-wrapper{
+  display: flex;
+}
+
+.button-wrapper button{
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: #314029;
+  border: solid 1px white;
+}
+
+.button-wrapper button:hover{
+  background-color: #4a613e;
+}
+
+#stop{
+  background-color: #20386a;
+}
+
+#stop:hover{
+  background-color: #182c52;
+}
+
+#reset{
+  background-color: #182c52;
+}
+
+#reset:hover{
+  background-color: #20386a;
+}
+
+/* #endregion end box2 */
+
+/* #region box3 */
+
+.box3 {
+  border: solid 1px white;
+  margin-bottom: 20px;
+}
+
+.flash-cards-container{
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* flash card scrollbar */
+
+.flash-cards-container::-webkit-scrollbar {
+  width: 5px; 
+  height: 4px; 
+}
+
+.flash-cards-container::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0); 
+}
+
+.flash-cards-container::-webkit-scrollbar-thumb {
+  background-color: white; 
+  border: none;
+  border-radius: 10px; 
+}
+
+
+.flash-cards-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
+}
+
+/* end flash card scrollbar */
+
+.flash-card-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  border-bottom: solid 1px white;
+}
+
+.flash-card-header-title{
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flash-card-add{
+  width: 3rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  background: none;
+  color: white;
+  border: none;
+}
+
+.flash-card-body{
+  background-color: rgba(0, 0, 0, 0.5);
+  border: solid 1px white;
+  text-align: center;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.flash-card-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  margin: 5px;
+}
+
+.flash-card-title h1{
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.flash-card-title button{
+  width: 2rem;
+  height: 2rem;
+  margin: 5px;
+  background-color: #4a613e;
+  color: white;
+  font-size: 1rem;
+}
+
+.flash-card-title button:hover{
+  background-color: #3b4e31;
+}
+
+.flash-card-hr{
+  background-color: white;
+  margin: 10px;
+}
+
+.flash-card-answer{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/* #region  prompt flash card */
+
+.prompt-flash-card-button{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.prompt-flash-card-button button{
+  width: 50px;
+  height: 50px;
+  background-color: #4a613e;
+  color: white;
+}
+
+.prompt-flash-card-button button:hover{
+  background-color: #3b4e31;
+}
+
+.prompt-flash-card{
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #314029;
+  text-align: center;
+  padding: 10px;  
+  border: solid 1px white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prompt-flash-card-title, .prompt-flash-card-answer{
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #070606;
+  border-radius: 10px;
+  margin: 5px;
+  outline: none;
+  border: none;
+}
+
+.prompt-flash-card-hr{
+  background-color: white;
+  margin: 10px;
+}
+
+/* #endregion  end prompt flash card */
+
+/* #endregion end box3 */
+
+/* #region  box4 */
+
+.box4 {
+  border: solid 1px white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.header-nots {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  border-bottom: solid 1px white;
+}
+
+.title-nots {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.551);
+}
+
+.create-note {
+  width: 3rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+}
+
+.container-nots {
+  width: 100%;
+  padding: 10px;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+}
+
+/* nots scrollbar */
+
+.container-nots::-webkit-scrollbar {
+  width: 5px; 
+  height: 4px; 
+}
+
+.container-nots::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0); 
+}
+
+.container-nots::-webkit-scrollbar-thumb {
+  background-color: white; 
+  border: none;
+  border-radius: 10px; 
+}
+
+
+.container-nots::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
+}
+
+/* end nots scrollbar */
+
+.note {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.note-buttons {
+  background-color: #182c52;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: black 1px solid;
+}
+
+.note-buttons button {
+  background-color: #4a613e;
+  color: white;
+  margin: 10px;
+  width: 40px;
+  height: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.note-board {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  padding: 5px;
+  resize: none;
+  user-select: none;
+  outline: none;
+  border: none;
+  scroll-padding-block: 10px;
+  overflow-y: scroll ;
+  box-sizing: border-box;
+}
+
+
+.note-board::-webkit-scrollbar {
+  width: 5px; 
+  height: 5px; 
+}
+
+.note-board::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: none;
+  border-radius: 10px; 
+  cursor: grabbing;
+}
+
+.note-board::-webkit-scrollbar-track {
+  background-color:rgba(153, 153, 153, 0.892); 
+}
+
+.prompt-note {
+  background-color: #003366;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prompt-buttons {
+  background-color: #294c94;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.prompt-buttons button {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #2079b4;
+  color: white;
+}
+
+.text-prompt {
+  width: 100%;
+  height: 70%;
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  resize: none;
+}
+
+.text-prompt::-webkit-scrollbar {
+  width: 5px; 
+  height: 5px; 
+}
+
+.text-prompt::-webkit-scrollbar-thumb {
+  background-color:  #10C8CD;
+  border: none;
+  border-radius: 10px; 
+  cursor: grabbing;
+}
+
+.text-prompt::-webkit-scrollbar-track {
+  background-color:rgba(153, 153, 153, 0.892); 
+}
+
+.hidden {
+  display: none;
+}
+
+/* #endregion  end box4 */
