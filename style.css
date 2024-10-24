@@ -732,7 +732,8 @@ body {
 
 @media (max-width: 768px) {
   body{
-    background-image: url("https://i.pinimg.com/control/564x/23/6e/5a/236e5af3426b5e01ac1e6948712721a7.jpg");
+    height: 120dvh;
+    background-image: url("./img/phinbg.jpg");
   }
 
   .container {
@@ -822,6 +823,7 @@ body {
 
   .container-nots{
     height: 200px;
+    margin-bottom: 20px;
   } 
 
   .prompt-task {
