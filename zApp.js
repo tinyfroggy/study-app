@@ -57,7 +57,10 @@ function storTaskForLocalStorage() {
 function displayTasks() {
   tasksContainer.innerHTML = '';
 
-  for (const task of todoLists) {
+  // for sorting the completed tasks first and then not completed
+const sortedTasks = todoLists.sort((a, b) => a.isDon - b.isDon);
+
+  for (const task of sortedTasks) {
 
     let taskBody =
       `
@@ -116,7 +119,8 @@ function addNewTask() {
   }
 
   // add new task on todo lists container
-  todoLists.push({
+  // unshift means add new task on top
+  todoLists.unshift({
     title: taskTitle.value,
     time: today,
     isDon: false,

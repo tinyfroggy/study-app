@@ -19,7 +19,7 @@ body {
   background-size: cover;
 }
 
-.circle{
+.circle {
   width: 2.5rem;
   border-radius: 50%;
   border: none;
@@ -28,13 +28,13 @@ body {
   background-color: white;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
 .container {
   display: grid;
-  gap: .625rem;
+  gap: 0.625rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   width: 90%;
@@ -45,14 +45,13 @@ body {
 
 .box {
   font-size: 24px;
-  border-radius: .625rem;
+  border-radius: 0.625rem;
   color: white;
 }
 
-
 /* #region box1 */
 .box1 {
-  border: solid .0625rem white;
+  border: solid 0.0625rem white;
 }
 
 .task-header {
@@ -60,10 +59,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: .625rem .625rem 0 0;
-  padding: .625rem;
-  margin-bottom: .625rem;
-  border-bottom: solid .0625rem white;
+  border-radius: 0.625rem 0.625rem 0 0;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-bottom: solid 0.0625rem white;
 }
 
 .header-title {
@@ -82,7 +81,7 @@ body {
   color: white;
 }
 
-.tasks{
+.tasks {
   width: 100%;
   max-height: 18.75rem;
   overflow-y: scroll;
@@ -91,113 +90,117 @@ body {
 /* task scrollbar */
 
 .tasks::-webkit-scrollbar {
-  width: .3125rem; 
-  height: .25rem; 
+  width: 0.3125rem;
+  height: 0.25rem;
 }
 
 .tasks::-webkit-scrollbar-track {
-  background: rgba(128, 128, 128, 0); 
+  background: rgba(128, 128, 128, 0);
 }
 
 .tasks::-webkit-scrollbar-thumb {
-  background-color: white; 
+  background-color: white;
   border: none;
-  border-radius: .625rem; 
+  border-radius: 0.625rem;
 }
 
 .tasks::-webkit-scrollbar-thumb:hover {
-  background-color: #555; 
+  background-color: #555;
 }
 
 /* end task scrollbar */
 
-.task-body{
-  border: solid .0625rem white;
+.task-body {
+  border: solid 0.0625rem white;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .625rem;
-  margin-bottom: .625rem;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
   transition: background-color 0.3s;
-  border-radius: .625rem;
-  margin: .625rem;
+  border-radius: 0.625rem;
+  margin: 0.625rem;
 }
 
 .task-body:hover {
   background-color: #4a6d7b;
-  .title-task{
+  .title-task {
     color: white;
   }
-  .circle{
+  .circle {
     background-color: #181829;
     color: white;
   }
 }
 
-.task-header-text{
+.task-header-text {
   width: 100%;
   padding: 5px;
   height: 50px;
 }
 
-.task-header-text p{
+.task-header-text p {
   margin: 0;
   height: 25px;
   display: flex;
 }
 
-.task-header-text hr{
+.task-header-text hr {
   margin: 0;
   color: white;
 }
 
-.title-task{
+.title-task {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-#date-task{
-  font-size: .9375rem;
+#date-task {
+  font-size: 0.9375rem;
   margin: 0;
 }
 
-.task-buttons-wrapper{
+.task-buttons-wrapper {
   display: flex;
   /* gap: .625rem; */
 }
 
-.task-buttons-wrapper button{
+.task-buttons-wrapper button {
   font-size: 24px;
-  margin-left: .625rem;
+  margin-left: 0.625rem;
 }
 
-.date-task{
-  font-size: .8125rem;
-  margin-left: .625rem;
+.date-task {
+  font-size: 0.8125rem;
+  margin-left: 0.625rem;
 }
 
-
-.delete-task , .done-task , .edit-task {
+.delete-task,
+.done-task,
+.edit-task {
   background-color: #314029;
   color: white;
-  border: solid .0625rem white;
+  border: solid 0.0625rem white;
 }
 
 /* #region  prompt task */
 
-.prompt-task{
-  background-color: #314029;
-  border: solid .0625rem white;
+.prompt-task {
+  background-image: url("./img/promt.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  border: solid 0.0625rem white;
   width: 25rem;
   height: 18.75rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding: .625rem;
-  border-radius: .625rem;
+  padding: 0.625rem;
+  border-radius: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -205,8 +208,8 @@ body {
   z-index: 200;
 }
 
-.prompt-task-button{
-  margin-top: .625rem;
+.prompt-task-button {
+  margin-top: 0.625rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -214,36 +217,41 @@ body {
   height: 3.125rem;
 }
 
-.prompt-task-button button{
+.prompt-task-button button {
   width: 3.125rem;
   height: 3.125rem;
-  background-color: #314029;
-  color: white;
-  border: solid .0625rem white;
+  background-color: #7daba9;
+  color: #021c2d;
 }
 
-.prompt-task-title{
+.prompt-task-button button:hover {
+  background-color: #5a8583;
+}
+
+.prompt-task-title {
   margin-top: 80px;
   width: 90%;
-  padding: .3125rem;
-  font-size: 24px;
+  padding: 0.3125rem;
+  font-size: 20px;
   font-weight: bold;
-  border: .0625rem solid #070606;
-  border-radius: .625rem;
-  padding: .625rem;
+  border: 0.0625rem solid #070606;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #e0eac7;
+  border: solid 0.0625rem black;
+  border-radius: 15px;
+  padding: 0.625rem;
   outline: none;
-  border: none;
 }
 
 /* #endregion  end prompt task */
 
-.done{
-  text-decoration: line-through .125rem;
+.done {
+  text-decoration: line-through 0.125rem;
   background-color: #4a613e;
   border: none;
 }
 
-.done:hover{
+.done:hover {
   background-color: #3b4e31;
 }
 
@@ -252,10 +260,10 @@ body {
 /* #region box2 */
 
 .box2 {
-  border: solid .0625rem white;
+  border: solid 0.0625rem white;
 }
 
-.timer-container{
+.timer-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -263,25 +271,25 @@ body {
   align-items: center;
 }
 
-.timer-header{
+.timer-header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: .625rem .625rem 0 0;
-  padding: .625rem;
-  margin-bottom: .625rem;
-  border-bottom: solid .0625rem white;
+  border-radius: 0.625rem 0.625rem 0 0;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-bottom: solid 0.0625rem white;
 }
 
-.title-timer{
+.title-timer {
   font-size: 32px;
   font-weight: bold;
   color: white;
   background-color: rgba(0, 0, 0, 0.551);
 }
 
-.timer-btn{
+.timer-btn {
   width: 48px;
   font-size: 40px;
   cursor: pointer;
@@ -290,23 +298,23 @@ body {
   color: white;
 }
 
-.timer-wrapper{
+.timer-wrapper {
   font-size: 32px;
 }
 
-.timer{
+.timer {
   font-size: 48px;
   font-weight: bold;
-  margin: .3125rem;
+  margin: 0.3125rem;
 }
 
-.timer-wrapper{
+.timer-wrapper {
   display: flex;
-  gap: .3125rem;
-  margin-bottom: .625rem;
+  gap: 0.3125rem;
+  margin-bottom: 0.625rem;
 }
 
-.timer-wrapper button{
+.timer-wrapper button {
   font-size: 32px;
   cursor: pointer;
   border: none;
@@ -314,42 +322,42 @@ body {
   color: white;
 }
 
-.button-wrapper{
+.button-wrapper {
   display: flex;
 }
 
-.button-wrapper button{
+.button-wrapper button {
   font-size: 32px;
   font-weight: bold;
-  letter-spacing: .0625rem;
-  padding: .3125rem;
-  border-radius: .625rem;
+  letter-spacing: 0.0625rem;
+  padding: 0.3125rem;
+  border-radius: 0.625rem;
   border: none;
   color: white;
   cursor: pointer;
-  margin-left: .625rem;
-  margin-bottom: .625rem;
+  margin-left: 0.625rem;
+  margin-bottom: 0.625rem;
   background-color: #314029;
-  border: solid .0625rem white;
+  border: solid 0.0625rem white;
 }
 
-.button-wrapper button:hover{
+.button-wrapper button:hover {
   background-color: #4a613e;
 }
 
-#stop{
+#stop {
   background-color: #20386a;
 }
 
-#stop:hover{
+#stop:hover {
   background-color: #182c52;
 }
 
-#reset{
+#reset {
   background-color: #182c52;
 }
 
-#reset:hover{
+#reset:hover {
   background-color: #20386a;
 }
 
@@ -358,11 +366,11 @@ body {
 /* #region box3 */
 
 .box3 {
-  border: solid .0625rem white;
+  border: solid 0.0625rem white;
   margin-bottom: 1.25rem;
 }
 
-.flash-cards-container{
+.flash-cards-container {
   width: 100%;
   max-height: 18.75rem;
   overflow: hidden;
@@ -372,44 +380,43 @@ body {
 /* flash card scrollbar */
 
 .flash-cards-container::-webkit-scrollbar {
-  width: .3125rem; 
-  height: .25rem; 
+  width: 0.3125rem;
+  height: 0.25rem;
 }
 
 .flash-cards-container::-webkit-scrollbar-track {
-  background: rgba(128, 128, 128, 0); 
+  background: rgba(128, 128, 128, 0);
 }
 
 .flash-cards-container::-webkit-scrollbar-thumb {
-  background-color: white; 
+  background-color: white;
   border: none;
-  border-radius: .625rem; 
+  border-radius: 0.625rem;
 }
 
-
 .flash-cards-container::-webkit-scrollbar-thumb:hover {
-  background-color: #555; 
+  background-color: #555;
 }
 
 /* end flash card scrollbar */
 
-.flash-card-header{
+.flash-card-header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .625rem;
+  padding: 0.625rem;
   color: white;
-  border-bottom: solid .0625rem white;
+  border-bottom: solid 0.0625rem white;
 }
 
-.flash-card-header-title{
+.flash-card-header-title {
   font-size: 32px;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.flash-card-add{
+.flash-card-add {
   width: 48px;
   border-radius: 50%;
   font-size: 40px;
@@ -418,48 +425,48 @@ body {
   border: none;
 }
 
-.flash-card-body{
+.flash-card-body {
   background-color: rgba(0, 0, 0, 0.5);
-  border: solid .0625rem white;
+  border: solid 0.0625rem white;
   text-align: center;
-  margin: .3125rem;
-  border-radius: .625rem;
+  margin: 0.3125rem;
+  border-radius: 0.625rem;
 }
 
-.flash-card-title{
+.flash-card-title {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   color: white;
-  margin: .3125rem;
+  margin: 0.3125rem;
 }
 
-.flash-card-title h1{
+.flash-card-title h1 {
   font-size: 1.25rem;
-  margin-right: .625rem;
+  margin-right: 0.625rem;
   font-weight: bold;
 }
 
-.flash-card-title button{
+.flash-card-title button {
   width: 32px;
   height: 32px;
-  margin: .3125rem;
+  margin: 0.3125rem;
   background-color: #4a613e;
   color: white;
   font-size: 16px;
 }
 
-.flash-card-title button:hover{
+.flash-card-title button:hover {
   background-color: #3b4e31;
 }
 
-.flash-card-hr{
+.flash-card-hr {
   background-color: white;
-  margin: .625rem;
+  margin: 0.625rem;
 }
 
-.flash-card-answer{
+.flash-card-answer {
   font-size: 1.25rem;
   font-weight: bold;
   color: white;
@@ -467,7 +474,28 @@ body {
 
 /* #region  prompt flash card */
 
-.prompt-flash-card-button{
+.prompt-flash-card {
+  background-image: url("./img/promt.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 450px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  padding: 0.625rem;
+  border: solid 0.0625rem white;
+  border-radius: 0.625rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prompt-flash-card-button {
   width: 100%;
   height: 3.125rem;
   display: flex;
@@ -476,51 +504,35 @@ body {
   margin-bottom: 1.875rem;
 }
 
-.prompt-flash-card-button button{
+.prompt-flash-card-button button {
   width: 3.125rem;
   height: 3.125rem;
-  background-color: #4a613e;
-  color: white;
+  background-color: #7daba9;
+  color: #021c2d;
 }
 
-.prompt-flash-card-button button:hover{
-  background-color: #3b4e31;
+.prompt-flash-card-button button:hover {
+  background-color: #5a8583;
 }
 
-.prompt-flash-card{
-  width: 25rem;
-  height: 18.75rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  background-color: #314029;
-  text-align: center;
-  padding: .625rem;  
-  border: solid .0625rem white;
-  border-radius: .625rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.prompt-flash-card-title, .prompt-flash-card-answer{
+.prompt-flash-card-title,
+.prompt-flash-card-answer {
   width: 100%;
   height: 3.125rem;
   font-weight: bold;
   text-align: center;
   font-size: 24px;
-  color: #070606;
-  border-radius: .625rem;
-  margin: .3125rem;
+  border-radius: 0.625rem;
+  margin: 0.3125rem;
   outline: none;
-  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #e0eac7;
+  border: solid 0.0625rem black;
 }
 
-.prompt-flash-card-hr{
+.prompt-flash-card-hr {
   background-color: white;
-  margin: .625rem;
+  margin: 0.625rem;
 }
 
 /* #endregion  end prompt flash card */
@@ -530,8 +542,8 @@ body {
 /* #region  box4 */
 
 .box4 {
-  border: solid .0625rem white;
-  border-radius: .625rem;
+  border: solid 0.0625rem white;
+  border-radius: 0.625rem;
   margin-bottom: 1.25rem;
 }
 
@@ -540,10 +552,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .625rem;
-  border-radius: .625rem .625rem 0 0;
+  padding: 0.625rem;
+  border-radius: 0.625rem 0.625rem 0 0;
   color: white;
-  border-bottom: solid .0625rem white;
+  border-bottom: solid 0.0625rem white;
 }
 
 .title-nots {
@@ -563,113 +575,118 @@ body {
 
 .container-nots {
   width: 100%;
-  padding: .625rem;
+  padding: 0.625rem;
   max-height: 18.75rem;
   overflow: hidden;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-radius: 0 0 .625rem .625rem;
+  border-radius: 0 0 0.625rem 0.625rem;
 }
 
 /* nots scrollbar */
 
 .container-nots::-webkit-scrollbar {
-  width: .3125rem; 
-  height: .25rem; 
+  width: 0.3125rem;
+  height: 0.25rem;
 }
 
 .container-nots::-webkit-scrollbar-track {
-  background: rgba(128, 128, 128, 0); 
+  background: rgba(128, 128, 128, 0);
 }
 
 .container-nots::-webkit-scrollbar-thumb {
-  background-color: white; 
+  background-color: white;
   border: none;
-  border-radius: .625rem; 
+  border-radius: 0.625rem;
 }
 
-
 .container-nots::-webkit-scrollbar-thumb:hover {
-  background-color: #555; 
+  background-color: #555;
 }
 
 /* end nots scrollbar */
 
 .note {
-  width: 15.625rem;
+  width: 251px;
   height: 15.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: .625rem;
+  margin-bottom: 0.625rem;
+  border: solid 0.0625rem white;
+  border-radius: 10px;
 }
 
 .note-buttons {
-  background-color: #182c52;
+  background-color: rgba(0, 0, 0, 0.7);
   width: 15.625rem;
   height: 3.125rem;
   display: flex;
   justify-content: space-between;
-  border-radius: .625rem .625rem 0rem 0rem;
-  border-bottom: black .0625rem solid;
+  border-radius: 0.625rem 0.625rem 0rem 0rem;
+  border-bottom: white 2px solid;
 }
 
 .note-buttons button {
   background-color: #4a613e;
   color: white;
-  margin: .625rem;
+  margin: 0.625rem;
   width: 2.5rem;
   height: 1.5625rem;
   font-size: 16px;
   cursor: pointer;
   border: none;
-  border-radius: .3125rem;
+  border-radius: 0.3125rem;
 }
 
 .note-board {
-  background-color: white;
+  background: rgba(128, 128, 128, 0);
+  color: white;
   width: 100%;
   height: 100%;
-  font-size: 24px;
-  padding: .3125rem;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 5px;
   resize: none;
   user-select: none;
   outline: none;
   border: none;
-  scroll-padding-block: .625rem;
-  overflow-y: scroll ;
+  scroll-padding-block: 10px;
+  overflow-y: scroll;
   box-sizing: border-box;
 }
 
-
 .note-board::-webkit-scrollbar {
-  width: .3125rem; 
-  height: .3125rem; 
+  width: 0.3125rem;
+  height: 0.3125rem;
 }
 
 .note-board::-webkit-scrollbar-thumb {
   background-color: black;
   border: none;
-  border-radius: .625rem; 
+  border-radius: 0.625rem;
   cursor: grabbing;
 }
 
 .note-board::-webkit-scrollbar-track {
-  background-color:rgba(153, 153, 153, 0.892); 
+  background-color: rgba(153, 153, 153, 0.892);
 }
 
 .prompt-note {
-  background-color: #003366;
-  width: 25rem;
-  height: 18.75rem;
+  background-image: url("./img/promt.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 450px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: .625rem;
-  border-radius: 1.25rem;
+  padding: 0.625rem;
+  border-radius: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -677,49 +694,54 @@ body {
 }
 
 .prompt-buttons {
-  background-color: #294c94;
   width: 100%;
-  height: 4.375rem;
+  height: 70px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: .625rem;
-  border-radius: .625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.625rem;
 }
 
 .prompt-buttons button {
-  margin: .625rem;
+  margin: 0.625rem;
   width: 3.125rem;
   height: 3.125rem;
-  background-color: #2079b4;
-  color: white;
+  background-color: #7daba9;
+  color: #021c2d;
+}
+
+.prompt-buttons button:hover {
+  background-color: #5a8583;
 }
 
 .text-prompt {
   width: 100%;
   height: 70%;
-  padding: .3125rem;
+  padding: 0.3125rem;
   outline: none;
   border: none;
-  border-radius: .625rem;
+  border-radius: 0.625rem;
   font-size: 24px;
   resize: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #e0eac7;
 }
 
 .text-prompt::-webkit-scrollbar {
-  width: .3125rem; 
-  height: .3125rem; 
+  width: 0.3125rem;
+  height: 0.3125rem;
 }
 
 .text-prompt::-webkit-scrollbar-thumb {
-  background-color:  #10C8CD;
+  background-color: #10c8cd;
   border: none;
-  border-radius: .625rem; 
+  border-radius: 0.625rem;
   cursor: grabbing;
 }
 
 .text-prompt::-webkit-scrollbar-track {
-  background-color:rgba(153, 153, 153, 0.892); 
+  background-color: rgba(153, 153, 153, 0.892);
 }
 
 .hidden {
@@ -728,13 +750,10 @@ body {
 
 /* #endregion  end box4 */
 
-
-
 @media (max-width: 768px) {
-  body{
+  body {
     height: 120dvh;
-    background-image: url("https://i.pinimg.com/control/564x/23/6e/5a/236e5af3426b5e01ac1e6948712721a7.jpg");
-   
+    background-image: url("./img/phinbg.jpg");
   }
 
   .container {
@@ -742,7 +761,7 @@ body {
     grid-template-rows: repeat(4, 1fr);
   }
 
-  .container{
+  .container {
     padding: 10px;
   }
 
@@ -754,7 +773,7 @@ body {
     font-size: 20px;
   }
 
-  .task-header-text p{
+  .task-header-text p {
     margin: 0;
   }
 
@@ -766,13 +785,13 @@ body {
   #date-task {
     font-size: 10px;
     margin: 0;
-  }  
+  }
 
-  .task-buttons-wrapper  button{
+  .task-buttons-wrapper button {
     font-size: 20px;
   }
 
-  .task-header-text p{
+  .task-header-text p {
     margin: 0;
     height: 15px;
     display: flex;
@@ -786,97 +805,121 @@ body {
     font-size: 20px;
   }
 
-  .button-wrapper button{
+  .button-wrapper button {
     font-size: 15px;
   }
 
-  .flash-card-add{
+  .flash-card-add {
     font-size: 20px;
   }
 
-  .flash-card-header-title{
+  .flash-card-header-title {
     font-size: 16px;
   }
 
-  .button-flash-card button{
+  .button-flash-card button {
     font-size: 20px;
   }
 
-  .create-note{
+  .create-note {
     font-size: 20px;
   }
 
-  .title-nots{
+  .title-nots {
     font-size: 16px;
   }
 
-  .tasks{
+  .tasks {
     height: 200px;
   }
 
-  .timer-container{
+  .timer-container {
     height: 200px;
   }
 
-  .flash-cards-container{
+  #stop {
+    background-color: #314029;
+  }
+
+  #reset {
+    background-color: #314029;
+  }
+
+  .flash-cards-container {
     height: 200px;
   }
 
-  .container-nots{
+  .container-nots {
     height: 200px;
     margin-bottom: 20px;
-  } 
+  }
 
   .prompt-task {
-    width: 200px;
+    width: 300px;
     height: 200px;
+    background-image: url("./img/phonPrompt.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    top: 20%;
   }
-  .prompt-task-button{
+  .prompt-task-button {
     margin: 0;
   }
 
-  .prompt-task-button button{
-    font-size: 20px;
+  .prompt-task-button button {
+    font-size: 25px;
     border: none;
+    background-color: #f4f1be;
   }
 
-  .prompt-task-title{
+  .prompt-task-title {
     margin: 20px;
-    font-size: 10px;
+    font-size: 15px;
   }
 
-  .prompt-flash-card{
-    width: 200px;
+  .prompt-flash-card {
+    width: 300px;
     height: 200px;
+    background-image: url("./img/phonPrompt.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    top: 80%;
   }
 
-  .prompt-flash-card-button{
+  .prompt-flash-card-button {
     margin: 0;
   }
 
-  .prompt-flash-card-button button{
+  .prompt-flash-card-button button {
     border: none;
-    font-size: 20px;
+    font-size: 25px;
     background: none;
   }
 
-  .prompt-flash-card-title, .prompt-flash-card-answer{
+  .prompt-flash-card-title,
+  .prompt-flash-card-answer {
     font-size: 10px;
   }
 
-  .prompt-note{
-    width: 200px;
+  .prompt-note {
+    width: 300px;
     height: 200px;
+    background-image: url("./img/phonPrompt.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    top: 80%;
   }
 
-  .prompt-note-button{
+  .prompt-note-button {
     margin: 0;
   }
 
-  .prompt-note-button button{
+  .prompt-buttons button{
     border: none;
-    font-size: 20px;
+    font-size: 25px;
     background: none;
   }
-
 }
