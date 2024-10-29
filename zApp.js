@@ -22,7 +22,7 @@ let day = date.getDate();
 let hour = date.getHours();
 let minute = date.getMinutes();
 
-let today = ` ${year}/${month + 1}/${day} | ${hour === 0 ? 12 : hour > 12 ? hour - 12 : hour}:${minute < 10 ? '0' + minute : minute} ${hour >= 12 ? 'PM' : 'AM'}`;
+let currentTime = ` ${year}/${month + 1}/${day} | ${hour === 0 ? 12 : hour > 12 ? hour - 12 : hour}:${minute < 10 ? '0' + minute : minute} ${hour >= 12 ? 'PM' : 'AM'}`;
 
 //? end date logic 
 
@@ -58,7 +58,7 @@ function displayTasks() {
   tasksContainer.innerHTML = '';
 
   // for sorting the completed tasks first and then not completed
-const sortedTasks = todoLists.sort((a, b) => a.isDon - b.isDon);
+  const sortedTasks = todoLists.sort((a, b) => a.isDon - b.isDon);
 
   for (const task of sortedTasks) {
 
@@ -103,7 +103,7 @@ submitTask.addEventListener('click', () => {
 
 // submit and close new task
 taskTitle.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter' && submitTask.classList.contains('hidden') === false) {
     addNewTask();
   }
 });
@@ -122,7 +122,7 @@ function addNewTask() {
   // unshift means add new task on top
   todoLists.unshift({
     title: taskTitle.value,
-    time: today,
+    time: currentTime,
     isDon: false,
     id: Date.now()
   });
@@ -160,7 +160,7 @@ function editTask(id) {
 
   // close prompt after submit
   taskTitle.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && submitEditTaskBtn.classList.contains('hidden') === false) {
       saveTaskEdit(task);
     }
   });
@@ -169,6 +169,8 @@ function editTask(id) {
 // save task edit logic
 function saveTaskEdit(task) {
   task.title = taskTitle.value;
+  task.time = currentTime + ' - ' + 'Eeddited';
+
 
   displayTasks();
   storTaskForLocalStorage();
@@ -254,29 +256,29 @@ const resetTimer = () => {
 
 }
 
-start.addEventListener('click', function() {
+start.addEventListener('click', function () {
   if (!isRunning) {
     isRunning = true;
-    this.disabled = true;  
+    this.disabled = true;
     stop.disabled = false;
     reset.disabled = false;
     startTimer();
   }
 });
 
-stop.addEventListener('click', function() { 
+stop.addEventListener('click', function () {
   if (isRunning) {
     isRunning = false;
     stopTimer();
-    start.disabled = false;  
-    this.disabled = true;  
+    start.disabled = false;
+    this.disabled = true;
   }
 });
 
-reset.addEventListener('click', function() {
+reset.addEventListener('click', function () {
   this.disabled = true;
   resetTimer();
-  isRunning = false;  
+  isRunning = false;
   stop.disabled = true;
   start.disabled = false;
 });
@@ -381,9 +383,10 @@ function editFlashCard(id) {
   flashCardAnswer.value = flashCards[index].answer;
 
   document.querySelector('.prompt-flash-card-add').classList.add('hidden');
-  document.querySelector('.prompt-flash-card-edit').classList.remove('hidden');
+  editFlashCardBtn.classList.remove('hidden');
   document.querySelector('.prompt-flash-card').classList.remove('hidden');
   flashCardTitle.focus();
+
   editFlashCardBtn.onclick = () => {
     saveFlashCardEdit(index);
   };
@@ -402,7 +405,7 @@ function saveFlashCardEdit(index) {
   displayFlashCards();
   storForLocalStorage();
 
-  document.querySelector('.prompt-flash-card-edit').classList.add('hidden');
+  editFlashCardBtn.classList.add('hidden');
   document.querySelector('.prompt-flash-card').classList.add('hidden');
 }
 
@@ -418,7 +421,7 @@ function deleteFlashCard(id) {
 addFlashCard.addEventListener('click', () => {
   document.querySelector('.prompt-flash-card').classList.remove('hidden');
   document.querySelector('.prompt-flash-card-add').classList.remove('hidden');
-  document.querySelector('.prompt-flash-card-edit').classList.add('hidden');
+  editFlashCardBtn.classList.add('hidden');
   flashCardTitle.value = '';
   flashCardAnswer.value = '';
   flashCardTitle.focus();
@@ -433,7 +436,7 @@ submitFlashCard.addEventListener('click', () => {
 });
 
 flashCardTitle.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter' && submitFlashCard.classList.contains('hidden') === false) {
     addNewFlashCard();
   }
 
@@ -443,7 +446,7 @@ flashCardTitle.addEventListener('keydown', function (event) {
 });
 
 flashCardAnswer.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter' && submitFlashCard.classList.contains('hidden') === false) {
     addNewFlashCard();
   }
 
@@ -511,7 +514,6 @@ function generateUniqueId() {
   return timestamp
 }
 
-
 const notsContainer = document.querySelector('.container-nots');
 const createNoteButton = document.querySelector('.create-note');
 
@@ -520,6 +522,18 @@ const textPrompt = document.querySelector('.text-prompt');
 const cancelPromptBtn = document.querySelector('.cancel-prompt');
 const submitPromptBtn = document.querySelector('.submit-prompt');
 const submitEditBtn = document.getElementById('edit-submit');
+
+function autoResize(element) {
+  element.style.height = 'auto';
+  element.style.height = `${Math.min(element.scrollHeight, 200)}px`;
+}
+
+function applyAutoResizeForNotes() {
+  const noteBoards = document.querySelectorAll('.note-board');
+  noteBoards.forEach(noteBoard => {
+      autoResize(noteBoard);
+  });
+}
 
 function renderNots() {
   notsContainer.innerHTML = '';
@@ -544,6 +558,8 @@ function renderNots() {
     notsContainer.innerHTML += noteElement;
 
   }
+
+  applyAutoResizeForNotes();
 }
 
 renderNots();
@@ -592,6 +608,10 @@ function editNote(id) {
     promptNote.classList.add('hidden');
   }
 }
+
+textPrompt.addEventListener('input', () => {
+  autoResize(textPrompt);
+});
 
 function deleteNote(id) {
   nots = nots.filter(note => note.id !== id);

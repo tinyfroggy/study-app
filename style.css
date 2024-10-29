@@ -158,7 +158,7 @@ body {
 }
 
 #date-task {
-  font-size: 0.9375rem;
+  font-size: 10px;
   margin: 0;
 }
 
@@ -443,7 +443,7 @@ body {
 }
 
 .flash-card-title h1 {
-  font-size: 1.25rem;
+  font-size: 20px;
   margin-right: 0.625rem;
   font-weight: bold;
 }
@@ -610,12 +610,11 @@ body {
 
 .note {
   width: 251px;
-  height: 15.625rem;
+  max-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 0.625rem;
-  border: solid 0.0625rem white;
   border-radius: 10px;
 }
 
@@ -652,10 +651,10 @@ body {
   resize: none;
   user-select: none;
   outline: none;
-  border: none;
   scroll-padding-block: 10px;
   overflow-y: scroll;
   box-sizing: border-box;
+  border: solid 0.0625rem white;
 }
 
 .note-board::-webkit-scrollbar {
@@ -788,7 +787,8 @@ body {
   }
 
   .task-buttons-wrapper button {
-    font-size: 20px;
+    font-size: 15px;
+    padding: 5px;
   }
 
   .task-header-text p {
@@ -817,8 +817,16 @@ body {
     font-size: 16px;
   }
 
-  .button-flash-card button {
-    font-size: 20px;
+  .buttons-flash-card button {
+    font-size: 15px;
+  }
+
+  .flash-card-title h1{
+    font-size: 15px;
+  }
+
+  .flash-card-answer{
+    font-size: 15px;
   }
 
   .create-note {
@@ -876,6 +884,11 @@ body {
   .prompt-task-title {
     margin: 20px;
     font-size: 15px;
+    color: white;
+  }
+
+  .prompt-task-title::placeholder{
+    opacity: 1;
   }
 
   .prompt-flash-card {
@@ -900,7 +913,12 @@ body {
 
   .prompt-flash-card-title,
   .prompt-flash-card-answer {
-    font-size: 10px;
+    font-size: 15px;
+    color: white;
+  }
+
+  .prompt-flash-card-title::placeholder , .prompt-flash-card-answer::placeholder{
+    opacity: 1;
   }
 
   .prompt-note {
@@ -921,5 +939,15 @@ body {
     border: none;
     font-size: 25px;
     background: none;
+  }
+
+  .text-prompt{
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .text-prompt::placeholder{
+    opacity: 1;
   }
 }
